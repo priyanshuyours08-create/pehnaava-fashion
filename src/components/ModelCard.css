@@ -1,0 +1,249 @@
+/* ModelCard - Editorial Fashion Card */
+
+.model-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  
+  /* Editorial card wrapper specifications */
+  background-color: #f5f2eb; /* warm off-white / light neutral */
+  border-radius: 12px;
+  overflow: visible; /* Allows .model-label to sit beneath without clipping */
+  box-shadow: 0 4px 20px rgba(28, 25, 23, 0.04), 0 1px 3px rgba(28, 25, 23, 0.02); /* clean, no heavy shadow */
+  border: 1px solid rgba(220, 215, 204, 0.6);
+  
+  /* Card dimensions */
+  width: clamp(190px, 16vw, 280px);
+  height: clamp(320px, 28vw, 470px);
+  flex-shrink: 0;
+  box-sizing: border-box;
+  
+  /* Preparation for GSAP animations */
+  transform-origin: center bottom;
+  user-select: none;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .model-card {
+    width: clamp(160px, 21vw, 220px);
+    height: clamp(270px, 35vw, 370px);
+  }
+}
+
+@media (max-width: 767px) {
+  .model-card {
+    width: clamp(135px, 38vw, 175px);
+    height: clamp(225px, 64vw, 295px);
+  }
+}
+
+/* Absolute positioning capability for GSAP independent animation orchestration */
+.model-card--absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Subtle editorial backdrop gradient to give tactile depth */
+.model-card__backdrop {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  background: radial-gradient(
+    circle at 50% 30%,
+    rgba(255, 255, 255, 0.7) 0%,
+    rgba(245, 242, 235, 0.85) 60%,
+    rgba(238, 234, 224, 0.95) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Visual container hosting the transparent model */
+.model-card__visual {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: inherit;
+  padding-bottom: clamp(10px, 1.2vw, 16px);
+  box-sizing: border-box;
+}
+
+.model-card__picture {
+  height: 94%;
+  width: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* The transparent model image */
+.model-card__image {
+  height: 100%;
+  width: auto;
+  max-width: none;
+  aspect-ratio: 669 / 373;
+  
+  /* Required CSS properties */
+  object-fit: contain;
+  object-position: center bottom;
+  
+  display: block;
+  pointer-events: none;
+  filter: drop-shadow(0 6px 12px rgba(35, 30, 25, 0.06)); /* subtle natural grounded drop shadow */
+  transition: transform 0.25s ease-out;
+}
+
+/* Editorial label / footer */
+.model-card__footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  padding: 8px 12px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  background: linear-gradient(
+    to top,
+    rgba(245, 242, 235, 0.95) 0%,
+    rgba(245, 242, 235, 0.7) 70%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.model-card__tag {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8c827a;
+  line-height: 1;
+}
+
+.model-card__label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #383431;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  line-height: 1.2;
+}
+
+/* -------------------------------------------------------------------------- */
+/* MODEL PRODUCT LABEL (Final Light Catalogue Phase)                          */
+/* -------------------------------------------------------------------------- */
+
+.model-label {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: clamp(170px, 18vw, 240px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 3px;
+  pointer-events: none;
+  user-select: none;
+  z-index: 10;
+  
+  /* Initial state: invisible during dark editorial phase */
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.model-label__category {
+  font-family: var(--font-sans);
+  font-size: clamp(9px, 0.72vw, 10.5px);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #111111;
+  opacity: 0.65;
+  line-height: 1;
+}
+
+.model-label__name {
+  font-family: var(--font-sans);
+  font-size: clamp(12.5px, 0.95vw, 15px);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: #111111;
+  margin: 0;
+  line-height: 1.25;
+  white-space: normal;
+}
+
+.model-label__price {
+  font-family: var(--font-sans);
+  font-size: clamp(11px, 0.8vw, 12.5px);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: #555555;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .model-label {
+    top: calc(100% + 10px);
+    max-width: clamp(150px, 20vw, 200px);
+    gap: 2.5px;
+  }
+  
+  .model-label__category {
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+  }
+  
+  .model-label__name {
+    font-size: 13px;
+  }
+  
+  .model-label__price {
+    font-size: 11.5px;
+  }
+}
+
+@media (max-width: 767px) {
+  .model-label {
+    top: calc(100% + 8px);
+    max-width: clamp(130px, 36vw, 165px);
+    gap: 2px;
+  }
+  
+  .model-label__category {
+    font-size: 8.5px;
+    letter-spacing: 0.12em;
+    opacity: 0.6;
+  }
+  
+  .model-label__name {
+    font-size: 11.5px;
+    line-height: 1.2;
+  }
+  
+  .model-label__price {
+    font-size: 10.5px;
+    color: #444444;
+  }
+}
+

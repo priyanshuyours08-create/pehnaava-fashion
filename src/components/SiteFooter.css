@@ -1,0 +1,461 @@
+/* SiteFooter.css - Final Closing Section: Brand CTA, Newsletter & Premium Footer */
+
+.site-footer {
+  width: 100%;
+  position: relative;
+  background-color: #0a0a0a;
+  color: #f3f3ef;
+  box-sizing: border-box;
+  overflow: hidden;
+  z-index: 10;
+  padding-top: clamp(100px, 12vh, 180px);
+  padding-bottom: clamp(40px, 6vh, 64px);
+}
+
+.site-footer__container {
+  width: 100%;
+  max-width: 1520px;
+  margin: 0 auto;
+  padding-inline: max(clamp(32px, 4vw, 56px), env(safe-area-inset-left, 32px));
+  box-sizing: border-box;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 1. FINAL CTA AREA                                                          */
+/* -------------------------------------------------------------------------- */
+
+.site-footer__cta-section {
+  margin-bottom: clamp(80px, 12vh, 140px);
+}
+
+.site-footer__cta-eyebrow {
+  font-family: var(--font-sans, sans-serif);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(243, 243, 239, 0.6);
+  margin-bottom: clamp(18px, 2.5vh, 28px);
+}
+
+.site-footer__cta-headline {
+  font-family: var(--font-distressed, serif);
+  font-size: clamp(52px, 7vw, 110px);
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  color: #f3f3ef;
+  margin: 0 0 clamp(32px, 4vh, 48px) 0;
+  white-space: pre-line;
+}
+
+.site-footer__shop-link {
+  font-family: var(--font-sans, sans-serif);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #f3f3ef;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  width: fit-content;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(243, 243, 239, 0.35);
+  transition: border-color 0.3s ease;
+}
+
+.site-footer__shop-arrow {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.site-footer__shop-link:hover {
+  border-bottom-color: #f3f3ef;
+}
+
+.site-footer__shop-link:hover .site-footer__shop-arrow {
+  transform: translateX(6px);
+}
+
+.site-footer__shop-link:focus-visible {
+  outline: 2px solid #f3f3ef;
+  outline-offset: 4px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 2. NEWSLETTER SIGNUP AREA                                                  */
+/* -------------------------------------------------------------------------- */
+
+.site-footer__newsletter-section {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: clamp(40px, 6vw, 96px);
+  margin-bottom: clamp(90px, 12vh, 150px);
+}
+
+.site-footer__newsletter-info {
+  flex: 0 0 auto;
+  max-width: 440px;
+}
+
+.site-footer__newsletter-title {
+  font-family: var(--font-sans, sans-serif);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #f3f3ef;
+  margin: 0 0 12px 0;
+}
+
+.site-footer__newsletter-copy {
+  font-family: var(--font-sans, sans-serif);
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 400;
+  color: rgba(243, 243, 239, 0.72);
+  margin: 0;
+}
+
+.site-footer__newsletter-form-wrapper {
+  flex: 1 1 480px;
+  max-width: 540px;
+}
+
+.site-footer__form {
+  position: relative;
+  width: 100%;
+}
+
+.site-footer__form-row {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(243, 243, 239, 0.35);
+  transition: border-color 0.3s ease;
+  position: relative;
+}
+
+.site-footer__form-row:focus-within {
+  border-bottom-color: #f3f3ef;
+}
+
+.site-footer__input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: var(--font-sans, sans-serif);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #f3f3ef;
+  padding: 14px 0;
+  box-sizing: border-box;
+}
+
+.site-footer__input::placeholder {
+  color: rgba(243, 243, 239, 0.45);
+  font-weight: 400;
+}
+
+.site-footer__submit-btn {
+  background: transparent;
+  border: none;
+  color: #f3f3ef;
+  font-family: var(--font-sans, sans-serif);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 14px 0 14px 16px;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: opacity 0.25s ease;
+}
+
+.site-footer__submit-btn:hover {
+  opacity: 0.8;
+}
+
+.site-footer__submit-btn:focus-visible {
+  outline: 2px solid #f3f3ef;
+  outline-offset: 4px;
+}
+
+.site-footer__form-feedback {
+  margin-top: 10px;
+  font-family: var(--font-sans, sans-serif);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  min-height: 18px;
+}
+
+.site-footer__form-feedback--success {
+  color: #f3f3ef;
+}
+
+.site-footer__form-feedback--error {
+  color: #ff6b6b;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 3. DIVIDER                                                                 */
+/* -------------------------------------------------------------------------- */
+
+.site-footer__divider {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(243, 243, 239, 0.14);
+  margin-bottom: clamp(60px, 8vh, 96px);
+  border: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 4. FOOTER 4-COLUMN NAVIGATION                                              */
+/* -------------------------------------------------------------------------- */
+
+.site-footer__nav-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: clamp(32px, 4vw, 64px);
+  margin-bottom: clamp(80px, 10vh, 120px);
+}
+
+.site-footer__brand-col {
+  padding-right: 24px;
+}
+
+.site-footer__brand-title {
+  font-family: var(--font-sans, sans-serif);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #f3f3ef;
+  margin: 0 0 16px 0;
+}
+
+.site-footer__brand-desc {
+  font-family: var(--font-sans, sans-serif);
+  font-size: 13px;
+  line-height: 1.6;
+  font-weight: 400;
+  color: rgba(243, 243, 239, 0.65);
+  margin: 0;
+  max-width: 260px;
+}
+
+.site-footer__nav-col-heading {
+  font-family: var(--font-sans, sans-serif);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(243, 243, 239, 0.45);
+  margin: 0 0 20px 0;
+}
+
+.site-footer__nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.site-footer__nav-link {
+  font-family: var(--font-sans, sans-serif);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(243, 243, 239, 0.68);
+  text-decoration: none;
+  display: inline-block;
+  transition: opacity 0.25s ease, transform 0.25s ease, color 0.25s ease;
+}
+
+.site-footer__nav-link:hover {
+  opacity: 1;
+  color: #f3f3ef;
+  transform: translateX(3px);
+}
+
+.site-footer__nav-link:focus-visible {
+  outline: 2px solid #f3f3ef;
+  outline-offset: 4px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 5. OVERSIZED BRAND WORDMARK                                                */
+/* -------------------------------------------------------------------------- */
+
+.site-footer__wordmark-wrapper {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: clamp(32px, 4vh, 48px);
+  user-select: none;
+}
+
+.site-footer__wordmark {
+  font-family: var(--font-distressed, serif);
+  font-size: clamp(64px, 13.5vw, 210px);
+  line-height: 0.82;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: rgba(243, 243, 239, 0.12);
+  white-space: nowrap;
+  display: block;
+  margin: 0;
+  pointer-events: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 6. BOTTOM ROW                                                              */
+/* -------------------------------------------------------------------------- */
+
+.site-footer__bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 24px;
+  border-top: 1px solid rgba(243, 243, 239, 0.08);
+  font-family: var(--font-sans, sans-serif);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(243, 243, 239, 0.5);
+  gap: 20px;
+}
+
+.site-footer__legal-links {
+  display: flex;
+  gap: 24px;
+}
+
+.site-footer__legal-link {
+  color: rgba(243, 243, 239, 0.5);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.site-footer__legal-link:hover {
+  color: #f3f3ef;
+}
+
+.site-footer__legal-link:focus-visible {
+  outline: 2px solid #f3f3ef;
+  outline-offset: 3px;
+}
+
+.site-footer__region {
+  letter-spacing: 0.14em;
+}
+
+/* Screen reader utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/* RESPONSIVE STYLES                                                          */
+/* -------------------------------------------------------------------------- */
+
+@media (max-width: 1023px) {
+  .site-footer__newsletter-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  .site-footer__newsletter-form-wrapper {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .site-footer__nav-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .site-footer {
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+
+  .site-footer__container {
+    padding-inline: 20px;
+  }
+
+  .site-footer__cta-section {
+    margin-bottom: 64px;
+  }
+
+  .site-footer__cta-headline {
+    font-size: clamp(42px, 13vw, 68px);
+    line-height: 0.92;
+  }
+
+  .site-footer__newsletter-section {
+    margin-bottom: 64px;
+  }
+
+  .site-footer__form-row {
+    flex-direction: column;
+    align-items: flex-start;
+    border-bottom: none;
+  }
+
+  .site-footer__input {
+    border-bottom: 1px solid rgba(243, 243, 239, 0.35);
+    padding: 12px 0;
+  }
+
+  .site-footer__submit-btn {
+    padding: 16px 0 0 0;
+    align-self: flex-start;
+  }
+
+  .site-footer__divider {
+    margin-bottom: 48px;
+  }
+
+  .site-footer__nav-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    margin-bottom: 56px;
+  }
+
+  .site-footer__bottom-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .site-footer__legal-links {
+    gap: 20px;
+  }
+}

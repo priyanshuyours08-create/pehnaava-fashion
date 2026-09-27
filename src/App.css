@@ -1,0 +1,9 @@
+/* App root styles */
+main {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  background-color: #f3f3ef;
+  overflow-x: hidden;
+}
+
